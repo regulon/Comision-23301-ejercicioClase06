@@ -1,1 +1,1 @@
-# Comision-23301-ejercicioClase06-
+# Comision-23301-ejercicioClase06
