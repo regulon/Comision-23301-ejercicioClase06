@@ -1,10 +1,20 @@
-import Video from "/js/componentes/video.js";
-import Elemento from "/js/componentes/buttons_e_inputs.js"
-
-const video1 = new Video("myVideo", "640", "360","/js/videos/victoria__nuestra_tierra_ (1080p).mp4", "video/mp4");
-video1.renderVideo();
-
-const elementoList = [
+export default class Elemento{
+    constructor(parentId, type, classBoostrap, id, placeholder, texto, name){
+        this.parentId = parentId;
+        this.type = type;
+        this.classBoostrap = classBoostrap;
+        this.id = id;
+        this.placeholder = placeholder;
+        this.texto = texto;
+        this.name = name;
+    }
+    render(){
+        const elemento = document.getElementById(this.parentId);
+        const myBoton = `${elemento.innerHTML}<input type="${this.type}" class="${this.classBoostrap}" id="${this.id}" placeholder="${this.placeholder}" value="${this.texto}" name="${this.name}">`;
+        elemento.innerHTML = myBoton;
+    }
+};
+/* const elementoList = [
     {type: "button", classBoostrap: "btn btn-primary", value: "Click", id: "boton1", placeholder: "", name: "boton1"},
     {type: "submit", classBoostrap: "btn btn-danger", value: "Enviar", id: "boton2", placeholder: "", name: "boton2"},
     {type: "reset", classBoostrap: "btn btn-success", value: "Resetear", id: "boton3", placeholder: "", name: "boton3"},
@@ -30,4 +40,4 @@ if (filtrar.length > 0) {
     const instanciaFiltrado = new Elemento("capa", elemento.type, elemento.classBoostrap, elemento.id, elemento.placeholder, elemento.value, elemento.name);
     instanciaFiltrado.render();
   });
-}
+} */
